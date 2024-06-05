@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.json({message: 'alive'});
 });
 
+router.post('/', function(req, res, next) {
+  res.json({message: 'alive'});
+});
+
 module.exports = router;
