@@ -4,6 +4,8 @@ const router = express.Router();
 
 /* POST search */
 router.post("/", async function (req, res, next) {
+
+  return [];
   try {
     const userQuery = req.body.query;
     const results = search(userQuery);
