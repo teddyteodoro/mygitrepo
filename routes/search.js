@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 
 /* GET quotes listing. */
-// router.get("/", async function (req, res, next) {
-//   try {
-//     res.json(await quotes.getMultiple(req.query.page));
-//   } catch (err) {
-//     console.error(`Error while getting search items `, err.message);
-//     res.status(err.statusCode || 500).json({ message: err.message });
-//   }
-// });
+router.get("/", async function (req, res, next) {
+  try {
+    res.json({hi: 'hello'});
+  } catch (err) {
+    console.error(`Error while getting search items `, err.message);
+    res.status(err.statusCode || 500).json({ message: err.message });
+  }
+});
 
 function getStore() {
   return [
