@@ -7,7 +7,7 @@ router.post("/", async function (req, res, next) {
 //  try {
     const userQuery = req.body.query;
     let results = search(userQuery);
-    res.json(transformValuesToStrings(results));
+    res.json(  JSON.stringify( transformValuesToStrings(results)) );
   // } catch (err) {
   //   console.error(`Error while posting search items `, err.message);
   //   res.status(err.statusCode || 500).json({ message: err.message });
