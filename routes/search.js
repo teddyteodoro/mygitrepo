@@ -4,6 +4,10 @@ const router = express.Router();
 
 /* POST search */
 router.post("/", async function (req, res, next) {
+    
+    res.json( []);
+
+    return;
 //  try {
     const userQuery = req.body.query;
   //  throw (typeof req.body) + ' ' + req.body
