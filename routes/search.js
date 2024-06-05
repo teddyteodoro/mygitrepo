@@ -13,6 +13,8 @@ router.get("/", async function (req, res, next) {
 });
 
 function getStore() {
+
+  return [];
   return [
     {
       id: "suiteanswers_doc_1",
