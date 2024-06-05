@@ -55,7 +55,7 @@ function getStore() {
   ];
 }
 
- transformValuesToStrings(data) {
+ function transformValuesToStrings(data) {
         if (Array.isArray(data)) {
             return data.map(item => this.transformValuesToStrings(item));
         } else if (typeof data === 'object' && data !== null) {
