@@ -57,12 +57,12 @@ function getStore() {
 
  function transformValuesToStrings(data) {
         if (Array.isArray(data)) {
-            return data.map(item => this.transformValuesToStrings(item));
+            return data.map(item => transformValuesToStrings(item));
         } else if (typeof data === 'object' && data !== null) {
             const result = {};
             for (const key in data) {
                 if (data.hasOwnProperty(key)) {
-                    result[key] = this.transformValuesToStrings(data[key]);
+                    result[key] = transformValuesToStrings(data[key]);
                 }
             }
             return result;
