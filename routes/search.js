@@ -7,21 +7,7 @@ router.post("/", async function (req, res, next) {
   try {
     const userQuery = req.body.query;
     let results = search(userQuery);
-    results = [
-  {
-    "title": "Company Travel Policy",
-    "text": "Flights, Hotels and Meals can be expensed using this new tool...",
-    "url": "https://drive.google.com/file/d/id1",
-    "created_at": "2023-11-25T20:09:31Z"
-  },
-  {
-    "title": "2024 Expenses Policy",
-    "text": "The list of recommended hotels are...",
-    "url": "https://drive.google.com/file/d/id2",
-    "created_at": "2023-12-04T16:52:12Z"
-  }
-]
-    res.json(results);
+    res.json("");
 
     // res.json(await quotes.create(req.body));
   } catch (err) {
