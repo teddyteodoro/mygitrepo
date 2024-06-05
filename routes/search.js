@@ -4,17 +4,14 @@ const router = express.Router();
 
 /* POST search */
 router.post("/", async function (req, res, next) {
-  try {
+//  try {
     const userQuery = req.body.query;
     let results = search(userQuery);
-    
     res.json(transformValuesToStrings(results));
-
-    // res.json(await quotes.create(req.body));
-  } catch (err) {
-    console.error(`Error while posting search items `, err.message);
-    res.status(err.statusCode || 500).json({ message: err.message });
-  }
+  // } catch (err) {
+  //   console.error(`Error while posting search items `, err.message);
+  //   res.status(err.statusCode || 500).json({ message: err.message });
+  // }
 });
 
 function search(searchPhrase) {
