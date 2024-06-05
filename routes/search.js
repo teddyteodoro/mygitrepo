@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const axios = require('axios');
 
 
 /* GET quotes listing. */
@@ -14,19 +15,19 @@ router.get("/", async function (req, res, next) {
 
 function getStore() {
 
-  return [];
+  return {results: []};
   return [
     {
       id: "suiteanswers_doc_1",
       title: "Installing the Workforce Management SuiteApp",
-      text: "As an Administrator, install the Workforce Management SuiteApp using the following details: Bundle Name: Adi Insights \nBundle ID: 317115 \nFor more information about how to install a SuiteApp in your account, see Installing a Bundle. \nTo continue setting up WFM, see Assigning the Adi Insights Integration Role.",
+      text: "As an Administrator, install the Workforce Management SuiteApp using the following details: Bundle Name: Adi Insights",
       url: "https://suiteanswers.custhelp.com/app/answers/detail/a_id/108569/loc/en_US"
     },
     {
       id: "suiteanswers_doc_2",
       title:
         "Rolling back the SuitePeople Time Clock Windows Application to AdiClock",
-      text: "SuitePeople Workforce management customers who upgrade to SuitePeople Time Clock version 2.0.0.0 for Windows have an option to roll back to the previous AdiClock version. \nIn line with the acquisition of Adi Insights by Oracle, the AdiClock Windows app is targeted for an upgrade that rebrands its visual components to align with the Oracle NetSuite colors and themes and rename the application from AdiClock to SuitePeople Time Clock. \nStarting June 5, 2024, Oracle will upgrade the AdiClock Windows application to SuitePeople Time Clock version 2.0.0.0.",
+      text: "helo",
       url: "https://suiteanswers.custhelp.com/app/answers/detail/a_id/1016217/loc/en_US"
     },
   ];
