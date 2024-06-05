@@ -7,7 +7,8 @@ router.post("/", async function (req, res, next) {
   try {
     const userQuery = req.body.query;
     let results = search(userQuery);
-    res.json([]);
+    
+    res.json(transformValuesToStrings(results));
 
     // res.json(await quotes.create(req.body));
   } catch (err) {
@@ -56,6 +57,22 @@ function getStore() {
     },
   ];
 }
+
+ transformValuesToStrings(data) {
+        if (Array.isArray(data)) {
+            return data.map(item => this.transformValuesToStrings(item));
+        } else if (typeof data === 'object' && data !== null) {
+            const result = {};
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    result[key] = this.transformValuesToStrings(data[key]);
+                }
+            }
+            return result;
+        } else {
+            return String(data);
+        }
+    }
 
 
 
