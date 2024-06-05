@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+
 /* GET quotes listing. */
 router.get("/", async function (req, res, next) {
   try {
@@ -57,7 +58,7 @@ router.post("/", async function (req, res, next) {
   try {
     const userQuery = req.body.query;
     const results = search(userQuery);
-    res.json({ results });
+    res.json(JSON.stringify({ results }));
 
     // res.json(await quotes.create(req.body));
   } catch (err) {
