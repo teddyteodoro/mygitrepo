@@ -7,7 +7,7 @@ router.post("/", async function (req, res, next) {
   try {
     const userQuery = req.body.query;
     let results = search(userQuery);
-    res.json("");
+    res.json([]);
 
     // res.json(await quotes.create(req.body));
   } catch (err) {
