@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/", async function (req, res, next) {
 //  try {
     const userQuery = req.body.query;
-    throw (typeof req.body) + ' ' + req.body
+  //  throw (typeof req.body) + ' ' + req.body
     let results = search(userQuery);
     res.json(  JSON.stringify( transformValuesToStrings(results)) );
   // } catch (err) {
