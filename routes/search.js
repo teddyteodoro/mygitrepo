@@ -5,23 +5,23 @@ const router = express.Router();
 /* POST search */
 router.post("/", async function (req, res, next) {
 
- var results = {  
-  "results": [  
-  {  
-    "id": "expense_doc_1",  
-    "title": "Expense Policies for external travel",  
-    "text": "You can expense any work-related...",  
-    "url": "https://internal-site.com/expensing"  
-    "created_at": "2023-11-25T20:09:31Z",  
-  },  
-   {  
-    "id": "expense_doc_2",  
-    "title": "Expense Policies for internal travel",  
-    "text": "You can expense any work-related...",  
-    "created_at": "2023-11-25T20:09:31Z",  
-  }
-  ]  
-}
+var results = {
+  results: [
+    {
+      id: "expense_doc_1",
+      title: "Expense Policies for external travel",
+      text: "You can expense any work-related...",
+      url: "https://internal-site.com/expensing",
+      created_at: "2023-11-25T20:09:31Z",
+    },
+    {
+      id: "expense_doc_2",
+      title: "Expense Policies for internal travel",
+      text: "You can expense any work-related...",
+      created_at: "2023-11-25T20:09:31Z",
+    },
+  ],
+};
  
  res.json(results);
   return ;
