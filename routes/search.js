@@ -6,6 +6,9 @@ const router = express.Router();
 router.post("/", async function (req, res, next) {
 
   try {
+    res.json({results: req.headers});
+    return; 
+    
     const userQuery = req.body.query;
     const results = search(userQuery);
     res.json({results});
