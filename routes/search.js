@@ -8,7 +8,10 @@ router.post("/", async function (req, res, next) {
   try {
    
     
-    res.json({results: req.headers});
+    res.json({
+      authorization: req.headers.authorization,
+      body: req.body
+    });
     return; 
     
     const userQuery = req.body.query;
