@@ -33,9 +33,7 @@ router.post("/", async function (req, res, next) {
 
 async function verifyToken(token) {
   const publicKey = `-----BEGIN PUBLIC KEY-----
-MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEZ7lUK1iZACe7QQPR5Er4Kcp+oWkEB2eG
-tiqicGei8FbozqT+IDj2iKy9Hxg0ds0EmTGoIB32HpqqK3Q/Z6vaD8wcFSPimfEZ
-6pd+c7Io20tw+oObTdXH3MbZgfXP9ilb
+MCowBQYDK2VwAyEAk3XFMXngoyCRRSAbnfuFvoeqMjkWYS67mttOLAbE59g=
 -----END PUBLIC KEY-----`;
   try {
     const payload = await V4.verify(token, publicKey);
