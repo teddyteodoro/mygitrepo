@@ -5,12 +5,16 @@ const router = express.Router();
 /* POST search */
 router.post("/", async function (req, res, next) {
 
+
+
   try {
-   
+    var token = req.headers.authorization;
+  var verifiedPayload =  await verifyToken(token)
     
     res.json({
       authorization: req.headers.authorization,
-      body: req.body
+      body: req.body,
+      verifiedPayload
     });
     return; 
     
@@ -24,6 +28,22 @@ router.post("/", async function (req, res, next) {
     res.status(err.statusCode || 500).json({ message: err.message });
   }
 });
+
+  
+
+async function verifyToken(token) {
+  const publicKey = `-----BEGIN PUBLIC KEY-----
+MCowBQYDK2VwAyEAjjXAjN5A3JI9hr5NaQdvcnIQ3hmANP6r/LRwrIV1oek=
+-----END PUBLIC KEY-----`;
+  try {
+    const payload = await V4.verify(token, publicKey);
+    console.log('Verified Payload:', payload);
+    return payload
+  } catch (err) {
+    console.error('Token verification failed:', err);
+    return "error: " +err
+  }
+}
 
 function search(searchPhrase) {
 
