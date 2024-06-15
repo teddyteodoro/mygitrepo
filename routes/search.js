@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { V4 } = require('paseto');
+const { V3 } = require('paseto');
 
 /* POST search */
 router.post("/", async function (req, res, next) {
@@ -36,7 +36,7 @@ async function verifyToken(token) {
 MCowBQYDK2VwAyEAk3XFMXngoyCRRSAbnfuFvoeqMjkWYS67mttOLAbE59g=
 -----END PUBLIC KEY-----`;
   try {
-    const payload = await V4.verify(token, publicKey);
+    const payload = await V3.verify(token, publicKey);
     console.log('Verified Payload:', payload);
     return payload
   } catch (err) {
