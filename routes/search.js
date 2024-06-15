@@ -6,6 +6,9 @@ const router = express.Router();
 router.post("/", async function (req, res, next) {
 
   try {
+    res.json({results: "hello"});
+    return; 
+    
     res.json({results: req.headers});
     return; 
     
