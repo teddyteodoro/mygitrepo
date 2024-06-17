@@ -9,12 +9,14 @@ router.post("/", async function (req, res, next) {
 
   try {
     var token = req.headers.authorization;
-  var verifiedPayload =  await verifyToken(token)
+    var tokenPayload =  await verifyToken(token)
+    var body = req.body
     
     res.json({
       authorization: req.headers.authorization,
-      body: req.body,
-      verifiedPayload
+      tokenPayload,
+      body,
+      
     });
     return; 
     
